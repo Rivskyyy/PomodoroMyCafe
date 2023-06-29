@@ -21,8 +21,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
 
-
-
     <ImageView
         android:id="@+id/coffe_shop_image_view"
         android:layout_width="250dp"
@@ -56,8 +54,8 @@
     <LinearLayout
         android:id="@+id/linearLayout_timer"
         android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="60dp"
+
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="@+id/coffe_shop_image_view"
         app:layout_constraintStart_toStartOf="@+id/coffe_shop_image_view"
@@ -66,36 +64,29 @@
         <TextView
             android:id="@+id/text_view_timer_minutes"
             android:layout_width="wrap_content"
-            android:layout_height="50sp"
+            android:layout_height="60sp"
             android:fontFamily="@font/vt323_regular"
-
             android:text="25"
             android:textColor="@color/white"
-            android:textSize="40sp" />
+            android:textSize="50sp" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-
+            android:layout_height="60dp"
             android:fontFamily="@font/vt323_regular"
-
             android:text=" : "
             android:textColor="@color/white"
-            android:textSize="40sp"
-
-
+            android:textSize="50sp"
             />
 
         <TextView
             android:id="@+id/text_view_timer_seconds"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-
+            android:layout_height="60dp"
             android:fontFamily="@font/vt323_regular"
-
             android:text="00"
             android:textColor="@color/white"
-            android:textSize="40sp" />
+            android:textSize="50sp" />
     </LinearLayout>
 
     <Button
@@ -155,5 +146,44 @@
         app:layout_constraintBottom_toBottomOf="@+id/gifImageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="settings(icon)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/achivements_button"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="achives"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_button"
+       />
+    <Button
+        android:id="@+id/upgrades_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="upgrades"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/achivements_button"
+        />
+
+    <TextView
+        android:id="@+id/money_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:text="0.0 $"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
