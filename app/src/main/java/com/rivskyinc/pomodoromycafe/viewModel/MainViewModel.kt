@@ -11,7 +11,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val liveDataSeconds =MutableLiveData<String>()
     val livedataMinutes = MutableLiveData<String>()
 
-    var timerData : Long = 1_500_000
+    var timerData : Long = 1_499_900
 
 
 fun startTimer(){
