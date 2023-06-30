@@ -91,33 +91,24 @@
 
     <Button
         android:id="@+id/decrement_timer"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="50dp"
-        android:background="@color/white"
-
-        app:layout_constraintStart_toStartOf="@+id/coffe_shop_image_view"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout_timer" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="-"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/button_start"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
         android:id="@+id/increment_timer"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="50dp"
-        android:background="@color/white"
-
-        app:layout_constraintStart_toStartOf="@+id/coffe_shop_image_view"
-        app:layout_constraintBottom_toTopOf="@id/linearLayout_timer"/>
-    <!--    <NumberPicker-->
-    <!--        android:id="@+id/time_picker"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="50dp"-->
-    <!--       android:outlineSpotShadowColor="@color/white"-->
-    <!--        android:theme="@style/AppTheme.Picker"-->
-    <!--            app:layout_constraintEnd_toEndOf="@+id/coffe_shop_image_view"-->
-    <!--            app:layout_constraintStart_toStartOf="@+id/coffe_shop_image_view"-->
-    <!--            app:layout_constraintTop_toTopOf="@+id/coffe_shop_image_view"-->
-    <!--         />-->
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="+"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@id/button_start"
+        app:layout_constraintBottom_toTopOf="@id/decrement_timer"
+        />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
@@ -137,7 +128,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:background="@color/white"
         android:text="START"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -151,18 +141,18 @@
         android:id="@+id/settings_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_margin="10dp"
         android:text="settings(icon)"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/achivements_button"
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="achives"
+        android:text="achieves"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settings_button"
+        app:layout_constraintTop_toBottomOf="@+id/money_text_view"
        />
     <Button
         android:id="@+id/upgrades_button"
@@ -181,7 +171,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
         android:text="0.0 $"
-        android:textSize="25sp"
+        android:textSize="35sp"
         android:textColor="@color/white"
         />
 

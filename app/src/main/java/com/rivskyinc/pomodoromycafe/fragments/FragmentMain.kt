@@ -28,18 +28,17 @@ class FragmentMain : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         bgMusic = MediaPlayer.create(requireContext(), R.raw.charles_dolle_indigo_rain)
         bgMusic.setOnPreparedListener {
             bgMusic.start()
+
         }
         bgMusic.setOnCompletionListener {
             bgMusic.start()
         }
-
 
         viewModel = ViewModelProvider(this@FragmentMain)[MainViewModel::class.java]
 
