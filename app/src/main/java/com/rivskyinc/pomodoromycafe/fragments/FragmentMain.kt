@@ -52,17 +52,37 @@ class FragmentMain : Fragment() {
                 textViewTimerSeconds.text = it
             }
 
-            incrementTimer.setOnClickListener {
-                viewModel.timerData += 300_000
-                baseTimer += 5
-                textViewTimerMinutes.text = baseTimer.toString()
+//            rangeSlider.addOnChangeListener { slider, value, fromUser ->
+//                val minValue = slider.values[0]
+//                val maxValue = slider.values[5]
+//            }
 
-            }
-            decrementTimer.setOnClickListener {
-                viewModel.timerData -= 300_000
-                baseTimer -= 5
-                textViewTimerMinutes.text = baseTimer.toString()
-            }
+
+
+           sliderTimer.addOnChangeListener { slider, value, fromUser ->
+//               slider.stepSize=300_000f
+//               slider.value=300_000f
+//               slider.valueFrom=300_000f
+//               slider.valueTo=3600_000f
+               textViewTimerMinutes.text = (value/60/1000).toInt().toString()
+
+                viewModel.timerData = value.toLong()
+
+
+           }
+
+
+//            incrementTimer.setOnClickListener {
+//                viewModel.timerData += 300_000
+//                baseTimer += 5
+//                textViewTimerMinutes.text = baseTimer.toString()
+//
+//            }
+//            decrementTimer.setOnClickListener {
+//                viewModel.timerData -= 300_000
+//                baseTimer -= 5
+//                textViewTimerMinutes.text = baseTimer.toString()
+//            }
 
             buttonStart.setOnClickListener {
                 viewModel.startTimer()
@@ -94,4 +114,6 @@ class FragmentMain : Fragment() {
     private fun resumeMusicBg(){
         bgMusic.start()
     }
+
+
 }

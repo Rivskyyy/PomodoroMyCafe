@@ -20,7 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
     <ImageView
         android:id="@+id/coffe_shop_image_view"
         android:layout_width="250dp"
@@ -89,31 +88,9 @@
             android:textSize="50sp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/decrement_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="-"
-        android:textSize="30sp"
-        app:layout_constraintStart_toEndOf="@id/button_start"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-    <Button
-        android:id="@+id/increment_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="+"
-        android:textSize="30sp"
-        app:layout_constraintStart_toEndOf="@id/button_start"
-        app:layout_constraintBottom_toTopOf="@id/decrement_timer"
-        />
-
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:src="@drawable/air_condition_anim"
         app:layout_constraintBottom_toBottomOf="@+id/coffe_shop_image_view"
@@ -123,26 +100,25 @@
         app:layout_constraintTop_toTopOf="@id/coffe_shop_image_view"
         app:layout_constraintVertical_bias="0.436" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="START"
-        android:textColor="@color/black"
-        android:textSize="30sp"
+        android:background="@null"
+        android:src="@drawable/close_button_300"
         android:layout_margin="16dp"
         android:fontFamily="@font/vt323_regular"
         app:layout_constraintBottom_toBottomOf="@+id/gifImageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/settings_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="settings(icon)"
+        android:src="@drawable/button_settings"
+        android:background="@null"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
@@ -162,6 +138,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/achivements_button"
         />
+    <Button
+        android:id="@+id/customize_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="customize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upgrades_button"
+        />
 
     <TextView
         android:id="@+id/money_text_view"
@@ -171,9 +155,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="10dp"
         android:text="0.0 $"
+        android:fontFamily="@font/vt323_regular"
         android:textSize="35sp"
         android:textColor="@color/white"
         />
 
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_timer"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:stepSize="300000"
+        android:value="300000"
+        android:valueFrom="300000"
+        android:valueTo="3600000"
+        app:thumbColor="#abe1f3"
+        app:trackColor="#abe1f3"
+        app:labelBehavior="gone"
+
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout_timer"
+        app:layout_constraintEnd_toEndOf="@id/linearLayout_timer"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout_timer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
