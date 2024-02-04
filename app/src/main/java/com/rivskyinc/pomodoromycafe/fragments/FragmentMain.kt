@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.rivskyinc.pomodoromycafe.R
 import com.rivskyinc.pomodoromycafe.databinding.FragmentMainBinding
 import com.rivskyinc.pomodoromycafe.viewModel.MainViewModel
 
-class FragmentMain : Fragment() {
+class FragmentMain : androidx.fragment.app.Fragment() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentMainBinding
@@ -33,11 +32,21 @@ class FragmentMain : Fragment() {
 
         bgMusic = MediaPlayer.create(requireContext(), R.raw.charles_dolle_indigo_rain)
         bgMusic.setOnPreparedListener {
-            bgMusic.start()
+            viewModel.isMusicOn.observe(viewLifecycleOwner){
+                if ( it ){
+                    bgMusic.start()
+                }
+            }
+
 
         }
         bgMusic.setOnCompletionListener {
-            bgMusic.start()
+            viewModel.isMusicOn.observe(viewLifecycleOwner){
+                if ( it ){
+                    bgMusic.start()
+                }
+            }
+         
         }
 
         viewModel = ViewModelProvider(this@FragmentMain)[MainViewModel::class.java]
